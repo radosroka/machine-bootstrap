@@ -45,5 +45,6 @@
     - alacritty
     - git
     - tmux
+    - gpg
   args:
     chdir: "{{ stow_dir }}"
