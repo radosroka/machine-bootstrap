@@ -1,0 +1,19 @@
+---
+- name: Install i3 packages (dnf)
+  become: true
+  ansible.builtin.dnf:
+    name: "{{ i3_packages }}"
+    state: present
+  when: pkg_manager == "dnf"
+
+- name: Install i3 packages (pacman)
+  become: true
+  community.general.pacman:
+    name: "{{ i3_packages }}"
+    state: present
+  when: pkg_manager == "pacman"
+
+- name: Stow i3 dotfiles
+  ansible.builtin.shell: stow -d "{{ stow_dir }}" -t "{{ home_dir }}" i3
+  args:
+    chdir: "{{ stow_dir }}"

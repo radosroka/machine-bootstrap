@@ -7,12 +7,6 @@ packages:
   - zsh
   - emacs
   - alacritty
-  - sway
-  - waybar
-  - wofi
-  - grim
-  - slurp
-  - wl-clipboard
   - ripgrep
   - fd
   - fzf
@@ -25,3 +19,22 @@ packages:
   - npm
   - tmux
   # tmux-mem-cpu-load: available in AUR (yay -S tmux-mem-cpu-load)
+
+sway_packages:
+  - sway
+  - swayidle
+  - swaylock
+  - waybar
+  - wofi
+  - grim
+  - slurp
+  - wl-clipboard
+
+i3_packages:
+  - i3-wm
+  - i3status
+  - dmenu
+  - xss-lock
+  - network-manager-applet
+  - blueman
+  - dex

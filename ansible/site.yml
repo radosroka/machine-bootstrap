@@ -12,4 +12,7 @@
     - packages
     - services
     - os-config
-    - sway
+    - role: sway
+      when: wm == "sway"
+    - role: i3
+      when: wm == "i3"

@@ -45,6 +45,5 @@
     - alacritty
     - git
     - tmux
-    - i3
   args:
     chdir: "{{ stow_dir }}"

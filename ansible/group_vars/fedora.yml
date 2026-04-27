@@ -7,15 +7,6 @@ packages:
   - zsh
   - emacs
   - alacritty
-  - sway
-  - swaybar
-  - swayidle
-  - swaylock
-  - waybar
-  - wofi
-  - grim
-  - slurp
-  - wl-clipboard
   - ripgrep
   - fd-find
   - fzf
@@ -28,3 +19,22 @@ packages:
   - npm
   - tmux
   # tmux-mem-cpu-load: build from source https://github.com/thewtex/tmux-mem-cpu-load
+
+sway_packages:
+  - sway
+  - swayidle
+  - swaylock
+  - waybar
+  - wofi
+  - grim
+  - slurp
+  - wl-clipboard
+
+i3_packages:
+  - i3
+  - i3status
+  - dmenu
+  - xss-lock
+  - nm-applet
+  - blueman
+  - dex-autostart

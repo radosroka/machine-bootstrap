@@ -1,5 +1,6 @@
 ---
 machine_hostname: laptop
+wm: sway
 
 sway_outputs:
   - name: eDP-1
