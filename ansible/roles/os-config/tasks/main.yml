@@ -5,6 +5,12 @@
     name: "{{ machine_hostname }}"
   when: machine_hostname is defined
 
+- name: Generate usbguard policy from connected devices
+  become: true
+  ansible.builtin.shell: usbguard generate-policy > /etc/usbguard/rules.conf
+  args:
+    creates: /etc/usbguard/rules.conf
+
 - name: Set default shell to zsh
   become: true
   ansible.builtin.user:

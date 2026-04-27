@@ -1,8 +1,16 @@
 ---
-- name: Enable and start services
+- name: Enable and start system services
   become: true
   ansible.builtin.systemd:
     name: "{{ item }}"
     enabled: true
     state: started
-  loop: "{{ services }}"
+  loop: "{{ services | default([]) }}"
+
+- name: Enable and start user services
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+    scope: user
+  loop: "{{ user_services | default([]) }}"

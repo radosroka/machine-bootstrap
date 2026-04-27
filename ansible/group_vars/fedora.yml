@@ -1,6 +1,16 @@
 ---
 pkg_manager: dnf
 
+services:
+  - vnstat
+  - ollama
+  - libvirtd
+  - usbguard
+
+user_services:
+  - usbguard-notifier
+  - emacs
+
 packages:
   # base
   - git
@@ -37,8 +47,11 @@ packages:
   # debug/profiling
   - strace
   - valgrind
-  # containers
+  # containers / virtualization
   - podman
+  - libvirt
+  - virt-manager
+  - ollama
   # network/sysadmin
   - wireguard-tools
   - vnstat
@@ -59,6 +72,9 @@ packages:
   - network-manager-applet
   - blueman
   - dmenu
+  - usbguard
+  - usbguard-notifier
+  - fapolicyd
 
 sway_packages:
   - sway
