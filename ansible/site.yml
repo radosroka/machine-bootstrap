@@ -17,3 +17,5 @@
       when: wm == "sway"
     - role: i3
       when: wm == "i3"
+    - role: nvidia
+      when: nvidia | bool

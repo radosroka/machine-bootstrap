@@ -1,0 +1,20 @@
+---
+- name: Install nvidia drivers (dnf)
+  become: true
+  ansible.builtin.dnf:
+    name:
+      - akmod-nvidia
+      - xorg-x11-drv-nvidia
+      - xorg-x11-drv-nvidia-cuda
+    state: present
+  when: pkg_manager == "dnf"
+
+- name: Install nvidia drivers (pacman)
+  become: true
+  community.general.pacman:
+    name:
+      - nvidia
+      - nvidia-utils
+      - cuda
+    state: present
+  when: pkg_manager == "pacman"

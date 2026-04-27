@@ -4,8 +4,9 @@ set -euo pipefail
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 usage() {
-    echo "Usage: $0 <wm>"
-    echo "  wm: sway or i3"
+    echo "Usage: $0 <wm> [nvidia]"
+    echo "  wm:    sway or i3"
+    echo "  nvidia: pass 'nvidia' to install nvidia drivers"
     exit 1
 }
 
@@ -16,6 +17,12 @@ shift
 if [[ "$WM" != "sway" && "$WM" != "i3" ]]; then
     echo "Error: wm must be 'sway' or 'i3'"
     usage
+fi
+
+NVIDIA=false
+if [[ "${1:-}" == "nvidia" ]]; then
+    NVIDIA=true
+    shift
 fi
 
 detect_distro() {
@@ -46,4 +53,5 @@ esac
 cd "$REPO_DIR/ansible"
 ansible-playbook site.yml -i inventory/localhost.yml \
     -e "wm=$WM" \
+    -e "nvidia=$NVIDIA" \
     --ask-become-pass "$@"
