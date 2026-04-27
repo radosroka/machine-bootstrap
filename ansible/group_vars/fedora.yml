@@ -2,6 +2,7 @@
 pkg_manager: dnf
 
 packages:
+  # base
   - git
   - stow
   - zsh
@@ -14,11 +15,46 @@ packages:
   - curl
   - wget
   - bat
-  - gnupg2
-  - nodejs
-  - npm
+  - tree
+  - unzip
+  - zip
+  - rsync
+  - jq
+  - vim-enhanced
+  # tmux
   - tmux
   # tmux-mem-cpu-load: build from source https://github.com/thewtex/tmux-mem-cpu-load
+  # crypto
+  - gnupg2
+  # node
+  - nodejs
+  - npm
+  # build tools
+  - cmake
+  - gcc
+  - gcc-c++
+  - clang
+  # debug/profiling
+  - strace
+  - valgrind
+  # containers
+  - podman
+  # network/sysadmin
+  - wireguard-tools
+  - vnstat
+  - mtr
+  - tcpdump
+  - whois
+  - socat
+  # apps (require repos role to run first)
+  - code
+  - firefox
+  - vlc
+  - ffmpeg
+  - spotify-client
+  # media/misc
+  - yt-dlp
+  - 7zip
 
 sway_packages:
   - sway
@@ -35,6 +71,11 @@ i3_packages:
   - i3status
   - dmenu
   - xss-lock
-  - nm-applet
+  - network-manager-applet
   - blueman
   - dex-autostart
+  - dunst
+  - feh
+  - pavucontrol
+  - xclip
+  - xrandr

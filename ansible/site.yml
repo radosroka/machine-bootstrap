@@ -9,6 +9,7 @@
     stow_dir: "{{ dotfiles_dir }}/stow"
 
   roles:
+    - repos
     - packages
     - services
     - os-config
