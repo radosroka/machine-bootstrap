@@ -55,6 +55,10 @@ packages:
   # media/misc
   - yt-dlp
   - 7zip
+  - pavucontrol
+  - network-manager-applet
+  - blueman
+  - dmenu
 
 sway_packages:
   - sway
@@ -65,17 +69,16 @@ sway_packages:
   - grim
   - slurp
   - wl-clipboard
+  - wlr-randr
+  - mako
+  - swaybg
 
 i3_packages:
   - i3
   - i3status
-  - dmenu
   - xss-lock
-  - network-manager-applet
-  - blueman
   - dex-autostart
   - dunst
   - feh
-  - pavucontrol
   - xclip
   - xrandr
