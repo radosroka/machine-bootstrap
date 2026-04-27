@@ -1,0 +1,49 @@
+* {
+    font-family: monospace;
+    font-size: 13px;
+}
+
+window {
+    background-color: #323232;
+    border: none;
+}
+
+#input {
+    background-color: #323232;
+    color: #ffffff;
+    border: none;
+    padding: 2px 6px;
+    margin: 0;
+}
+
+#scroll {
+    background-color: #323232;
+    border: none;
+}
+
+#inner-box {
+    background-color: #323232;
+}
+
+#outer-box {
+    background-color: #323232;
+    padding: 0;
+}
+
+#entry {
+    padding: 2px 6px;
+    color: #5c5c5c;
+}
+
+#entry:selected {
+    background-color: #323232;
+    color: #ffffff;
+}
+
+#text {
+    color: #5c5c5c;
+}
+
+#text:selected {
+    color: #ffffff;
+}
