@@ -1,0 +1,12 @@
+---
+- name: Set hostname
+  become: true
+  ansible.builtin.hostname:
+    name: "{{ machine_hostname }}"
+  when: machine_hostname is defined
+
+- name: Set default shell to zsh
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh

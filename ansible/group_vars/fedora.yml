@@ -1,0 +1,30 @@
+---
+pkg_manager: dnf
+
+packages:
+  - git
+  - stow
+  - zsh
+  - emacs
+  - alacritty
+  - sway
+  - swaybar
+  - swayidle
+  - swaylock
+  - waybar
+  - wofi
+  - grim
+  - slurp
+  - wl-clipboard
+  - ripgrep
+  - fd-find
+  - fzf
+  - htop
+  - curl
+  - wget
+  - bat
+  - gnupg2
+  - nodejs
+  - npm
+  - tmux
+  # tmux-mem-cpu-load: build from source https://github.com/thewtex/tmux-mem-cpu-load

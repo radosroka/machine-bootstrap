@@ -1,0 +1,15 @@
+---
+- name: Bootstrap machine
+  hosts: localhost
+  become: false
+
+  vars:
+    dotfiles_dir: "{{ playbook_dir }}/.."
+    home_dir: "{{ ansible_env.HOME }}"
+    stow_dir: "{{ dotfiles_dir }}/stow"
+
+  roles:
+    - packages
+    - services
+    - os-config
+    - sway

@@ -1,0 +1,8 @@
+---
+machine_hostname: laptop
+
+sway_outputs:
+  - name: eDP-1
+    resolution: 1920x1200
+    refresh: 60
+    position: "0 0"

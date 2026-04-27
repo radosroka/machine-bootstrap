@@ -1,0 +1,27 @@
+---
+pkg_manager: pacman
+
+packages:
+  - git
+  - stow
+  - zsh
+  - emacs
+  - alacritty
+  - sway
+  - waybar
+  - wofi
+  - grim
+  - slurp
+  - wl-clipboard
+  - ripgrep
+  - fd
+  - fzf
+  - htop
+  - curl
+  - wget
+  - bat
+  - gnupg
+  - nodejs
+  - npm
+  - tmux
+  # tmux-mem-cpu-load: available in AUR (yay -S tmux-mem-cpu-load)

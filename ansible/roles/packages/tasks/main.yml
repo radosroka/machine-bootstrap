@@ -1,0 +1,50 @@
+---
+- name: Install packages (dnf)
+  become: true
+  ansible.builtin.dnf:
+    name: "{{ packages }}"
+    state: present
+  when: pkg_manager == "dnf"
+
+- name: Install packages (pacman)
+  become: true
+  community.general.pacman:
+    name: "{{ packages }}"
+    state: present
+  when: pkg_manager == "pacman"
+
+- name: Install oh-my-zsh
+  ansible.builtin.shell: |
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  args:
+    creates: "{{ home_dir }}/.oh-my-zsh"
+
+- name: Clone Doom Emacs
+  ansible.builtin.git:
+    repo: https://github.com/doomemacs/doomemacs
+    dest: "{{ home_dir }}/.config/emacs"
+    depth: 1
+  register: doom_clone
+
+- name: Set npm global prefix
+  ansible.builtin.shell: npm config set prefix ~/.npm-global
+  args:
+    creates: "{{ home_dir }}/.npmrc"
+
+- name: Install rustup
+  ansible.builtin.shell: |
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+  args:
+    creates: "{{ home_dir }}/.cargo/bin/rustup"
+
+- name: Stow dotfiles
+  ansible.builtin.shell: stow -d "{{ stow_dir }}" -t "{{ home_dir }}" {{ item }}
+  loop:
+    - zsh
+    - doom-emacs
+    - alacritty
+    - git
+    - tmux
+    - i3
+  args:
+    chdir: "{{ stow_dir }}"

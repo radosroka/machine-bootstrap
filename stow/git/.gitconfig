@@ -1,0 +1,10 @@
+[user]
+	name = Radovan Sroka
+	email = radovan.sroka@gmail.com
+	signingkey = CD726798379C89A68C3D488D2A2FAFCD83692D85
+
+[commit]
+	gpgsign = true
+
+[init]
+	defaultBranch = main

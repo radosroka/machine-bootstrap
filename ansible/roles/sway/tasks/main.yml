@@ -1,0 +1,18 @@
+---
+- name: Create sway config directory
+  ansible.builtin.file:
+    path: "{{ home_dir }}/.config/sway"
+    state: directory
+    mode: "0755"
+
+- name: Stow sway dotfiles
+  ansible.builtin.shell: stow -d "{{ stow_dir }}" -t "{{ home_dir }}" sway
+  args:
+    chdir: "{{ stow_dir }}"
+
+- name: Template sway outputs config
+  ansible.builtin.template:
+    src: outputs.conf.j2
+    dest: "{{ home_dir }}/.config/sway/outputs.conf"
+    mode: "0644"
+  when: sway_outputs is defined
