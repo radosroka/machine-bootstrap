@@ -46,5 +46,6 @@
     - git
     - tmux
     - gpg
+    - scripts
   args:
     chdir: "{{ stow_dir }}"
