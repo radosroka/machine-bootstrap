@@ -33,7 +33,7 @@ bindsym $mod+d exec $menu
 bindsym $mod+Shift+Escape input type:keyboard xkb_switch_layout next
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
-bindsym $mod+p exec grim -g "$(slurp)" -t png ~/screenshot-$(date '+%Y-%m-%d-%H%M%S').png
+bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
 
 # Moving around
