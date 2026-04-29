@@ -71,18 +71,18 @@
        ;;grammar
 
        :tools
-       ansible
+       ;;ansible
        ;;biblio
        ;;debugger
        ;;direnv
-       docker
+       ;;docker
        ;;editorconfig
        ;;ein
        (eval +overlay)
        ;;gist
        lookup
        lsp
-       magit
+       ;;magit
        make
        ;;pass
        pdf
