@@ -1,0 +1,96 @@
+* {
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #0d0d0d;
+    color: #cccccc;
+    border-top: 2px solid #1e1e1e;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    background: transparent;
+    color: #666666;
+    box-shadow: none;
+}
+
+#workspaces button:hover {
+    background: #1a1a1a;
+    color: #aaaaaa;
+}
+
+#workspaces button.focused {
+    color: #ffffff;
+    box-shadow: inset 0 2px #5e81ac;
+}
+
+#workspaces button.urgent {
+    color: #cc3333;
+}
+
+#mode {
+    background: #1a1a1a;
+    color: #5e81ac;
+    padding: 0 8px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#idle_inhibitor,
+#power-profiles-daemon,
+#tray,
+#language {
+    padding: 0 10px;
+    color: #aaaaaa;
+}
+
+#clock {
+    color: #ffffff;
+}
+
+#battery.charging {
+    color: #a3be8c;
+}
+
+#battery.warning:not(.charging) {
+    color: #ebcb8b;
+}
+
+#battery.critical:not(.charging) {
+    color: #cc3333;
+}
+
+#cpu {
+    color: #88c0d0;
+}
+
+#memory {
+    color: #81a1c1;
+}
+
+#temperature.critical {
+    color: #cc3333;
+}
+
+#network.disconnected {
+    color: #cc3333;
+}
+
+#idle_inhibitor.activated {
+    color: #5e81ac;
+}
+
+#pulseaudio.muted {
+    color: #444444;
+}

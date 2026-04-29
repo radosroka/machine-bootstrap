@@ -124,4 +124,15 @@ bindsym XF86AudioPrev exec playerctl previous
 exec /usr/bin/gpg-agent --daemon
 exec waybar
 
+### Theme
+font pango:DejaVu Sans Mono 10
+gaps inner 6
+default_border pixel 1
+
+# class                 border    bg        text      indicator child_border
+client.focused          #888888   #1a1a1a   #ffffff   #888888   #888888
+client.focused_inactive #2a2a2a   #111111   #aaaaaa   #2a2a2a   #2a2a2a
+client.unfocused        #1a1a1a   #0d0d0d   #666666   #1a1a1a   #1a1a1a
+client.urgent           #cc3333   #1a1a1a   #ffffff   #cc3333   #cc3333
+
 include /etc/sway/config.d/*

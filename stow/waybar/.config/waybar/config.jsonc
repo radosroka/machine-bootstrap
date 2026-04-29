@@ -20,7 +20,7 @@
         "memory",
         "temperature",
         "backlight",
-        "sway/language",
+        "custom/language",
         "battery",
         "clock",
         "tray"
@@ -95,6 +95,11 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "custom/language": {
+        "exec": "~/.config/waybar/layout.sh",
+        "interval": 2,
+        "format": "{}"
     },
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
