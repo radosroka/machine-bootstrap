@@ -87,6 +87,8 @@ sway_packages:
   - wlr-randr
   - mako
   - swaybg
+  - light
+  - playerctl
 
 i3_packages:
   - i3-wm
