@@ -34,6 +34,7 @@ bindsym $mod+Shift+Escape input type:keyboard xkb_switch_layout next
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Home exec sh -c 'pkill waybar || (waybar &disown)'
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
 
 # Moving around
@@ -121,10 +122,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 ### Autostart
 exec /usr/bin/gpg-agent --daemon
-
-### Status Bar
-bar {
-    swaybar_command waybar
-}
+exec waybar
 
 include /etc/sway/config.d/*
