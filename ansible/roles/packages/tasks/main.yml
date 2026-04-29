@@ -47,5 +47,6 @@
     - tmux
     - gpg
     - scripts
+    - wallpaper
   args:
     chdir: "{{ stow_dir }}"

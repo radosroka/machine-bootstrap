@@ -11,7 +11,7 @@ set $term alacritty
 set $menu wofi --show drun
 
 ### Output configuration
-output * bg /usr/share/backgrounds/default.jpg fill
+output * bg ~/.config/wallpaper.jpg fill
 
 ### Idle configuration
 exec swayidle -w \
@@ -126,7 +126,7 @@ exec waybar
 
 ### Theme
 font pango:DejaVu Sans Mono 10
-gaps inner 6
+gaps inner 0
 default_border pixel 1
 
 # class                 border    bg        text      indicator child_border
