@@ -6,6 +6,7 @@ services:
   - ollama
   - libvirtd
   - usbguard
+  - power-profiles-daemon
 
 user_services:
   - usbguard-notifier
@@ -74,6 +75,8 @@ packages:
   - usbguard
   - usbguard-notifier
   - fapolicyd
+  # power management
+  - power-profiles-daemon
 
 sway_packages:
   - sway
