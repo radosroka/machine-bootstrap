@@ -5,11 +5,9 @@ services:
   - vnstat
   - ollama
   - libvirtd
-  - usbguard
   - power-profiles-daemon
 
 user_services:
-  - usbguard-notifier
   - emacs
 
 packages:
