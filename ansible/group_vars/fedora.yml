@@ -76,6 +76,7 @@ packages:
   - usbguard
   - usbguard-notifier
   - fapolicyd
+  - remmina
   # power management
   - power-profiles-daemon
 
