@@ -55,5 +55,6 @@
     - gpg
     - scripts
     - wallpaper
+    - waybar
   args:
     chdir: "{{ stow_dir }}"
