@@ -26,6 +26,13 @@
     depth: 1
   register: doom_clone
 
+- name: Run doom sync
+  ansible.builtin.shell: |
+    export PATH="{{ home_dir }}/.config/emacs/bin:$PATH"
+    doom sync
+  args:
+    creates: "{{ home_dir }}/.config/emacs/.local/straight"
+
 - name: Set npm global prefix
   ansible.builtin.shell: npm config set prefix ~/.npm-global
   args:
