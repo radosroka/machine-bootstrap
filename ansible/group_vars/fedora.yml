@@ -75,6 +75,9 @@ packages:
   - usbguard-notifier
   - fapolicyd
   - remmina
+  - acpi
+  - sl
+  - stress
   # power management
   - power-profiles-daemon
 
