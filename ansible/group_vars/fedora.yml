@@ -78,6 +78,8 @@ packages:
   - acpi
   - sl
   - stress
+  - fprintd
+  - fprintd-pam
   # power management
   - power-profiles-daemon
 
