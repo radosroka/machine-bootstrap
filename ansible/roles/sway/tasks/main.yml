@@ -20,6 +20,6 @@
     mode: "0755"
 
 - name: Stow sway dotfiles
-  ansible.builtin.shell: stow -d "{{ stow_dir }}" -t "{{ home_dir }}" sway
+  ansible.builtin.shell: stow -d "{{ stow_dir }}" -t "{{ home_dir }}" sway mako
   args:
     chdir: "{{ stow_dir }}"

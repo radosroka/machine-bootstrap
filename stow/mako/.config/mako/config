@@ -1,0 +1,6 @@
+# Auto-dismiss after 5s unless the app asks for a different timeout
+default-timeout=5000
+
+# Keep critical notifications until dismissed
+[urgency=critical]
+default-timeout=0
