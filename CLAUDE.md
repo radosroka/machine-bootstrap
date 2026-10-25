@@ -36,8 +36,8 @@ ansible-playbook site.yml -i inventory/localhost.yml -e "wm=sway" -e "nvidia=fal
 |------|-------------|
 | `repos` | Adds third-party repos (VS Code, Spotify via negativo17, RPM Fusion) — Fedora only |
 | `packages` | Installs base packages, oh-my-zsh, Doom Emacs, rustup, npm prefix; runs `stow` for all common dotfiles |
-| `services` | Enables system and user systemd services (vnstat, ollama, libvirtd, usbguard, emacs daemon) |
-| `os-config` | Sets hostname (if `machine_hostname` var defined), generates usbguard policy, sets default shell to zsh |
+| `services` | Enables system and user systemd services (vnstat, ollama, libvirtd, emacs daemon); usbguard is left for manual setup |
+| `os-config` | Sets hostname (if `machine_hostname` var defined), sets default shell to zsh |
 | `sway` / `i3` | Installs WM-specific packages and stows the WM dotfiles |
 | `nvidia` | Optional — installs Nvidia drivers |
 

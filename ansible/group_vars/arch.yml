@@ -5,7 +5,6 @@ services:
   - vnstat
   - ollama
   - libvirtd
-  - usbguard
   - power-profiles-daemon
 
 user_services:

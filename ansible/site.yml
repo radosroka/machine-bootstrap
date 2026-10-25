@@ -19,3 +19,26 @@
       when: wm == "i3"
     - role: nvidia
       when: nvidia | bool
+
+  post_tasks:
+    - name: Manual steps remaining
+      ansible.builtin.debug:
+        msg: >-
+          {{ fwupd_steps + usbguard_steps + (fprintd_steps if pkg_manager == 'dnf' else []) }}
+      vars:
+        fwupd_steps:
+          - "fwupd: update firmware before enabling usbguard (updated devices can change their USB IDs):"
+          - "  fwupdmgr get-updates"
+          - "  fwupdmgr update"
+        usbguard_steps:
+          - "usbguard: plug in the USB devices you use, then generate the policy:"
+          - "  sudo sh -c 'usbguard generate-policy > /etc/usbguard/rules.conf'"
+          - "usbguard: enable the service:"
+          - "  sudo systemctl enable --now usbguard"
+        fprintd_steps:
+          - "fprintd: enable fingerprint auth in PAM:"
+          - "  sudo authselect enable-feature with-fingerprint"
+          - "fprintd: enroll a finger:"
+          - "  fprintd-enroll {{ ansible_user_id }}"
+          - "fprintd: verify the enrolled finger:"
+          - "  fprintd-verify"
