@@ -44,6 +44,13 @@
   args:
     creates: "{{ home_dir }}/.cargo/bin/rustup"
 
+# Pre-create so stow links only files inside it instead of folding the whole dir
+- name: Create ~/.gnupg with private permissions
+  ansible.builtin.file:
+    path: "{{ home_dir }}/.gnupg"
+    state: directory
+    mode: "0700"
+
 - name: Stow dotfiles
   ansible.builtin.shell: stow -d "{{ stow_dir }}" -t "{{ home_dir }}" {{ item }}
   loop:
