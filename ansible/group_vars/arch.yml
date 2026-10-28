@@ -74,6 +74,7 @@ packages:
   - usbguard
   - usbguard-notifier
   - fapolicyd
+  - bolt
   # power management
   - power-profiles-daemon
 
